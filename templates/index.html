@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>QERP Tool Main</title>
+    <center><i> <u><h1>Covid information</h1></u></i></center>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='qerp.css') }}">
+    <link rel="shortcut icon" href="#" />
+
+	</head>
+<body>
+<center><form action="/info" method="POST">
+    State: <input id="input2" type="text" name="Sname" value="" required=1><br>
+    Date: <input id="input3" type="text" name="Dbase" value="" required=1><br>
+  <input type="reset" value="Reset">
+  <input type="submit" onclick="myFunction()" name="my-form" value="Submit">  
+    </form>
+    </center>
+   <script>
+       
+    </script>  
+</body>
+</html>
