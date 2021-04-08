@@ -4,6 +4,7 @@ os.system('pip install pandas')
 os.system('pip install flask')
 import pandas as pd
 import requests
+import numpy
 from flask import Flask,render_template,request,redirect,flash,url_for     
 import sys
 from datetime import datetime
