@@ -1,4 +1,3 @@
 runtime: python39
 manual_scaling:
   instances: 5 
-Env: flex
