@@ -1,9 +1,9 @@
 import csv
 import os
-import pandas as pd
+import lib.pandas as pd
 import requests
 import numpy
-from flask import Flask,render_template,request,redirect,flash,url_for     
+from lib.flask import Flask,render_template,request,redirect,flash,url_for     
 import sys
 from datetime import datetime
 CSV_URL = 'https://api.covidtracking.com/v1/states/current.csv'
