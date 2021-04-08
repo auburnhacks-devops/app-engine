@@ -1,7 +1,5 @@
 import csv
 import os
-os.system('pip install pandas')
-os.system('pip install flask')
 import pandas as pd
 import requests
 import numpy
