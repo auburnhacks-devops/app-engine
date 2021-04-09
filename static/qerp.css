@@ -1,3 +1,36 @@
-body {
-    background-color:skyblue;
+body{
+  background-image: url('https://www.emeraldgrouppublishing.com/sites/default/files/image/covid-cells.jpg');
+
+}
+.header {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+input[type=text], select {
+  width: 30%;
+  top: 80px;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  vertical-align:middle;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="text"], textarea {
+
+  background-color :white; 
+
+}
+#input1[type="text"], textarea {
+vertical-align:middle;
+  background-color :white; 
+
+}
+#label {
+  text-align: center;
+  color: white;
+  font-size: 10px;
 }

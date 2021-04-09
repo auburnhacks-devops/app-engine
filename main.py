@@ -1,9 +1,9 @@
 import csv
-import os
 import lib.pandas as pd
 import requests
-import numpy
-from lib.flask import Flask,render_template,request,redirect,flash,url_for     
+from lib.flask import Flask,render_template,request,redirect,Response,flash,url_for
+#from lib.flask_table import Table, Col
+import os     
 import sys
 from datetime import datetime
 CSV_URL = 'https://api.covidtracking.com/v1/states/current.csv'
@@ -30,13 +30,14 @@ def info():
         Sname = request.form['Sname']
         print(Sname)
         Dbase = request.form['Dbase']
-        data1=data[(data['state']=='FL') & (data['date']==20210307)]        
-        return data1.to_json(orient='split')
+        data1=data[(data['state']=='FL') & (data['date']==20210307)]   
+        #table = Table(data1)     
+        return  render_template('view.html',tables=[data1.to_html(classes='female')],
+    titles = ['na', 'Covid Imporamation for '+Sname])
     else:
         return("Bad request please verify the input values.")
-
+#Response (data1.to_json(orient='split'))
 
 if __name__ =="__main__":
     app.secret_key = os.urandom(24)
     app.run(debug=True)
- 
