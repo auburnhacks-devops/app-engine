@@ -1,5 +1,6 @@
 runtime: python
 env: flex
+command: pip install gunicorn==19.3.0
 entrypoint: lib.gunicorn -b :$PORT main:app
 
 runtime_config:
