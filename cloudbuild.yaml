@@ -1,4 +1,5 @@
 steps: 
-- name: 'gcr.io/cloud-builders/gcloud' 
+- name: 'gcr.io/cloud-builders/gcloud'
+entrypoint: 'bash' 
 args: ['app', 'deploy', '[app/app.yaml]'] 
 timeout: '1600s' 
