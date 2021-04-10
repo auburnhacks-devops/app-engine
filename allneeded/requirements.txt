@@ -3,3 +3,4 @@ flask
 requests
 flask_table
 gunicorn==19.3.0
+lxml

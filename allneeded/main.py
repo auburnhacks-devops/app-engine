@@ -1,13 +1,18 @@
 import csv
-import lib.pandas as pd
+import pandas as pd
 import requests
 from lib.flask import Flask,render_template,request,redirect,Response,flash,url_for
 #from lib.flask_table import Table, Col
 import os     
 import sys
 from datetime import datetime
-CSV_URL = 'https://api.covidtracking.com/v1/states/current.csv'
-data=pd.read_csv(CSV_URL)
+url = 'https://github.com/nytimes/covid-19-data/blob/master/live/us-counties.csv'
+html = requests.get(url).content
+df_list = pd.read_html(html)
+data = df_list[-1]
+data1=data.iloc[: , 1:]
+data1=data1.reset_index(drop=True)
+data=data1.sort_values(by='confirmed_deaths', ascending=False)
 #print(data.head(1))
 #cursor = connection.cursor()  
 #app=Flask(__name__, template_folder='templates/')
@@ -30,7 +35,7 @@ def info():
         Sname = request.form['Sname']
         print(Sname)
         Dbase = request.form['Dbase']
-        data1=data[(data['state']=='FL') & (data['date']==20210307)]   
+        data1=data[(data['state']=='{}'.format(Sname))]   
         #table = Table(data1)     
         return  render_template('view.html',tables=[data1.to_html(classes='female')],
     titles = ['na', 'Covid Imporamation for '+Sname])
